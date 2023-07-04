@@ -1,11 +1,13 @@
 import random
 import time
+from utils import screen_cleaner
 
 random_list = []
 user_list = []
 
 
 def play(difficulty):
+    screen_cleaner()
     print('\nWelcome to the Memory Game \n')
 
     def generate_sequence():
@@ -13,9 +15,9 @@ def play(difficulty):
             number = random.randint(1, 101)
             random_list.append(number)
             random_list.sort()
-        print(random_list, end='')
+        print(random_list)
         time.sleep(0.7)
-        print('\r'' ')
+        screen_cleaner()
 
     def get_list_from_user():
         print('Enter the right numbers of the list you saw \n')

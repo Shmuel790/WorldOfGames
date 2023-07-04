@@ -1,7 +1,8 @@
 import random
-
+from utils import screen_cleaner
 
 def play(difficulty):
+    screen_cleaner()
     print('\nWelcome to the Guess Game \n')
     secret_number = random.randint(1, difficulty)
     choose_number = int(input(f'Guess a number between 1 and {difficulty + 1}: '))
