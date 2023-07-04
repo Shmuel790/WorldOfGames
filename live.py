@@ -2,6 +2,7 @@ import time
 import memorygame
 import guessgame
 import currencyroulettegame
+from score import add_score
 
 global difficulty, game_choose
 
@@ -30,13 +31,19 @@ def load_game():
             print('\nYou chose the Memory Game! Enjoy it!')
             time.sleep(2)
             memorygame.play(difficulty)
+            if bool(memorygame) is True:
+                add_score(difficulty=difficulty)
         if game_choose == 2:
             print('\nYou chose the Guess Game! Enjoy it!')
             time.sleep(2)
             guessgame.play(difficulty)
+            if bool(guessgame) is True:
+                add_score(difficulty=difficulty)
         if game_choose == 3:
             print('\nYou chose the Currency Roulette Game! Enjoy it!')
             time.sleep(2)
             currencyroulettegame.play(difficulty)
+            if bool(currencyroulettegame) is True:
+                add_score(difficulty=difficulty)
 
         return difficulty, game_choose
