@@ -2,6 +2,7 @@ import random
 import os.path as op
 import urllib.request
 from datetime import date
+from utils import screen_cleaner
 from currency_converter import ECB_URL, CurrencyConverter
 
 filename = f"ecb_{date.today():%Y%m%d}.zip"
@@ -12,6 +13,7 @@ CurrencyConverter(filename)
 
 def play(difficulty):
     def get_money_interval():
+        screen_cleaner()
         print('\nWelcome to the Currency Roulette!\n')
         global current
         global number
