@@ -6,6 +6,12 @@ from score import add_score
 
 global difficulty, game_choose
 
+def between(a, b, c):
+    if a <= c <= b:
+        return True
+    else:
+        print(f"Please enter a number between {a} and {b}. \n")
+
 def welcome(name):
     return f'Hello {name} and welcome to the World of Games (WoG) \nHere you can find many cool games.\n'
 
